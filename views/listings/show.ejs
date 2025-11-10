@@ -23,7 +23,8 @@
 </div>    
     <br/>
  </div>
-<% if (typeof currUser !== 'undefined' && currUser && currUser._id.equals(listing.owner._id)) { %>
+<% if (currUser && listing.owner && currUser._id.toString() === listing.owner._id.toString()) { %>
+
 
   <div class="btns">
          <a href="/listings/<%= listing._id %>/edit" 
