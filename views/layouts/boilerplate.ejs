@@ -20,6 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
 <link href="/css/rating.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
@@ -35,5 +36,26 @@
     </script>
     <script src="/js/script.js"></script>
     <script src="/js/script.js"></script>
+
+    <script>
+  const menu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("menuOverlay");
+
+  menu.addEventListener("show.bs.collapse", () => {
+    overlay.style.display = "block";
+    document.body.classList.add("menu-open");
+  });
+
+  menu.addEventListener("hide.bs.collapse", () => {
+    overlay.style.display = "none";
+    document.body.classList.remove("menu-open");
+  });
+
+  overlay.addEventListener("click", () => {
+    const bsCollapse = new bootstrap.Collapse(menu, { toggle: false });
+    bsCollapse.hide();
+  });
+</script>
+
 </body>
 </html>

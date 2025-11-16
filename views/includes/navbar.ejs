@@ -1,79 +1,47 @@
-<style>
-  .search-btn {
-    background-color: #fe424d;
-    color: #fff;
-    border-radius: 25px;
-    padding: 0 1rem;
-  }
-  .search-btn:hover {
-    background-color: #fe424d;
-    color: #fff;
-  }
-  .search-inp {
-    border-radius: 25px;
-    padding: 0.5rem 3rem;
-    font-size: 1rem;
-  }
-</style>
-
 <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
   <div class="container-fluid">
 
-    <!-- Brand -->
     <a class="navbar-brand" href="/listings">
       <i class="fa-regular fa-compass"></i>
     </a>
 
-    <!-- Toggler Button -->
+    <!-- Hamburger -->
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarMenu"
+      data-bs-target="#mobileMenu"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- COLLAPSE CONTENT -->
-    <div class="collapse navbar-collapse" id="navbarMenu">
+    <!-- COLLAPSE MENU -->
+    <div class="collapse navbar-collapse mobile-menu-panel" id="mobileMenu">
 
-      <!-- LEFT MENU ITEMS -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="/listings">Explore</a>
-        </li>
-      </ul>
+      <ul class="navbar-nav w-100">
+        <li class="nav-item"><a class="nav-link" href="/listings">Explore</a></li>
+        
+        <!-- Mobile search -->
+        <form class="d-flex my-2 d-lg-none justify-content-center">
+          <input class="form-control mobile-search" placeholder="Search destination" />
+          <button class="btn search-btn ms-2">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
 
-      <!-- SEARCH BAR (centered on mobile) -->
-      <form class="d-flex mx-auto my-2" style="max-width: 300px;">
-        <input class="form-control search-inp" type="search" placeholder="Search destinations" />
-        <button class="btn search-btn ms-2" type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i> Search
-        </button>
-      </form>
-
-      <!-- RIGHT MENU ITEMS -->
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-        <li class="nav-item">
-          <a class="nav-link" href="/listings/new">Airbnb your home</a>
-        </li>
+        <li class="nav-item"><a class="nav-link" href="/listings/new">Airbnb your home</a></li>
 
         <% if (!currUser) { %>
-          <li class="nav-item">
-            <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/login"><b>Login</b></a>
-          </li>
+          <li><a class="nav-link" href="/signup"><b>Sign Up</b></a></li>
+          <li><a class="nav-link" href="/login"><b>Login</b></a></li>
         <% } else { %>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Log out</a>
-          </li>
+          <li><a class="nav-link" href="/logout">Logout</a></li>
         <% } %>
-
       </ul>
 
     </div>
   </div>
 </nav>
+
+<!-- Overlay -->
+<div id="menuOverlay"></div>
