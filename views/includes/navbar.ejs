@@ -19,34 +19,40 @@
 <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
   <div class="container-fluid">
 
-    
+    <!-- Brand -->
     <a class="navbar-brand" href="/listings">
       <i class="fa-regular fa-compass"></i>
     </a>
 
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <!-- Toggler Button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <!-- COLLAPSE CONTENT -->
+    <div class="collapse navbar-collapse" id="navbarMenu">
 
-     
+      <!-- LEFT MENU ITEMS -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" href="/listings">Explore</a>
         </li>
       </ul>
 
-     
-      <form class="d-flex mx-auto my-2" role="search" style="max-width: 300px;">
+      <!-- SEARCH BAR (centered on mobile) -->
+      <form class="d-flex mx-auto my-2" style="max-width: 300px;">
         <input class="form-control search-inp" type="search" placeholder="Search destinations" />
         <button class="btn search-btn ms-2" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i> Search
         </button>
       </form>
 
-     
+      <!-- RIGHT MENU ITEMS -->
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
@@ -60,13 +66,12 @@
           <li class="nav-item">
             <a class="nav-link" href="/login"><b>Login</b></a>
           </li>
-        <% } %>
-
-        <% if (currUser) { %>
+        <% } else { %>
           <li class="nav-item">
             <a class="nav-link" href="/logout">Log out</a>
           </li>
         <% } %>
+
       </ul>
 
     </div>

@@ -101,6 +101,10 @@ app.engine("ejs",ejsMate);
 app.use("/listings",listingsRouter );
 app.use("/listings/:id/reviews",reviewsRouter);
 app.use("/",userRouter);
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
 
 // 404 handler (keep this at the end of all routes)
 app.use((req, res, next) => {
